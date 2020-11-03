@@ -1,0 +1,7 @@
+include ':MyAI'
+include ':MyMaterial'
+include ':MyLogin'
+include ':MyCustomView'
+include ':MyMedia'
+include ':app'
+rootProject.name = "MyApp"

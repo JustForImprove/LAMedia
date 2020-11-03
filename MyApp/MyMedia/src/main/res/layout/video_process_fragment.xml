@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/video_process_player_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/video_process_src"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@id/video_process_src_open"
+        app:layout_constraintTop_toBottomOf="@id/video_process_player_fragment" />
+    <Button
+        android:id="@+id/video_process_src_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@id/video_process_src_play"
+        app:layout_constraintTop_toBottomOf="@id/video_process_player_fragment"
+        android:text="选择源文件"/>
+
+    <Button
+        android:id="@+id/video_process_src_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/video_process_player_fragment"
+        android:text="播放源文件"/>
+
+
+
+    <EditText
+        android:id="@+id/video_process_src2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@id/video_process_src2_open"
+        app:layout_constraintTop_toBottomOf="@id/video_process_src" />
+
+    <Button
+        android:id="@+id/video_process_src2_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@+id/video_process_src2_play"
+        app:layout_constraintTop_toBottomOf="@id/video_process_src"
+        android:text="选择操作文件"/>
+
+
+    <Button
+        android:id="@+id/video_process_src2_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="@id/video_process_src2"
+        app:layout_constraintTop_toBottomOf="@id/video_process_src"
+        android:text="播放操作文件"/>
+
+
+    <EditText
+        android:id="@+id/video_process_output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@id/video_process_output_open"
+        app:layout_constraintTop_toBottomOf="@id/video_process_src2"/>
+    <Button
+        android:id="@+id/video_process_output_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@+id/video_process_output_play"
+        app:layout_constraintTop_toBottomOf="@id/video_process_src2"
+        android:text="设置输出文件夹"/>
+
+    <Button
+        android:id="@+id/video_process_output_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="@id/video_process_output"
+        app:layout_constraintTop_toBottomOf="@id/video_process_src2"
+        android:text="播放输出文件"/>
+
+    <ProgressBar
+        android:id="@+id/video_process_progress"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:progress="50"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        app:layout_constraintTop_toBottomOf="@id/video_process_output"
+        android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/video_process_function_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/video_process_output" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp">
+
+    <com.wonderkiln.camerakit.CameraView
+        android:id="@+id/object_detect_cameraView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center|top" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="300dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/object_detect_imageViewResult"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:padding="2dp" />
+
+        <TextView
+            android:id="@+id/object_detect_textViewResult"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:fadeScrollbars="false"
+            android:gravity="center"
+            android:maxLines="15"
+            android:scrollbars="vertical"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/object_detect_btnToggleCamera"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="50dp"
+        android:text="切换相机"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/object_detect_btnDetectObject"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|center"
+        android:text="检测物体"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:visibility="gone" />
+
+</FrameLayout>

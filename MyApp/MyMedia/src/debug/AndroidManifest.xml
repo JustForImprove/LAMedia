@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.la.mymedia">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".TestActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".player.activity.XPlayerActivity"/>
+        <activity android:name=".live.activity.LiveActivity"/>
+        <!-- audio handle -->
+        <activity android:name=".clip.activity.AudioHandleActivity" />
+        <!-- media handle -->
+        <activity android:name=".clip.activity.MediaHandleActivity" />
+        <!-- video handle -->
+        <activity android:name=".clip.activity.VideoHandleActivity" />
+        <!-- media player -->
+        <activity
+            android:name=".clip.activity.MediaPlayerActivity"
+            android:screenOrientation="landscape" />
+        <!-- local pusher -->
+        <activity
+            android:name=".clip.activity.PushActivity" />
+        <!-- real time pusher -->
+        <activity
+            android:name=".clip.activity.LiveActivity"
+            android:screenOrientation="portrait" />
+        <!-- filter effect -->
+        <activity
+            android:name=".clip.activity.FilterActivity"
+            android:screenOrientation="landscape" />
+        <!-- video preview -->
+        <activity android:name=".clip.activity.VideoPreviewActivity"
+            android:screenOrientation="portrait" />
+        <!-- probe media format -->
+        <activity android:name=".clip.activity.ProbeFormatActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".clip.activity.ClipEnterActivity"/>
+        <activity android:name=".live.activity.LiveEnterActivity"/>
+        <activity android:name=".player.activity.PlayerEnterActivity"/>
+
+    </application>
+
+</manifest>

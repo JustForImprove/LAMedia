@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/main_menu_item1" android:title="音视频"  android:icon="@drawable/btn_icon_selector"  />
+    <item android:id="@+id/main_menu_item2" android:title="ai算法"  android:icon="@mipmap/ic_launcher" />
+    <item android:id="@+id/main_menu_item3" android:title="自定义控件"  android:icon="@mipmap/ic_launcher" />
+    <item android:id="@+id/main_menu_item4" android:title="框架demo"  android:icon="@mipmap/ic_launcher" />
+    <item android:id="@+id/main_menu_item5" android:title="算法"  android:icon="@mipmap/ic_launcher"/>
+
+</menu>

@@ -1,0 +1,60 @@
+
+if (isDebug.toBoolean()) {
+    apply plugin: 'com.android.application'
+}else {
+    apply plugin: 'com.android.library'
+}
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        if (isDebug.toBoolean()) {
+            applicationId "com.la.myai"
+        }
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+// 要求app\不进行压缩的文件后缀
+    aaptOptions {
+        noCompress "tflite"
+        noCompress "lite"
+        noCompress "pb"
+
+    }
+
+    sourceSets {
+        main {
+            if (isDebug.toBoolean()) {
+                manifest.srcFile 'src/debug/AndroidManifest.xml'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    compile 'com.wonderkiln:camerakit:0.13.1'
+    compile 'org.tensorflow:tensorflow-lite:+'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.google.android.material:material:1.2.0-alpha01'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0-alpha01'
+    implementation'org.tensorflow:tensorflow-android:1.2.0'
+
+}
