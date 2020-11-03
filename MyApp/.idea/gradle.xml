@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/MyMaterial" />
             <option value="$PROJECT_DIR$/MyMedia" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/hotfix" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
