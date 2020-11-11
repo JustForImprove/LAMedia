@@ -14,7 +14,7 @@ android {
         if (isDebug.toBoolean()){
             applicationId "com.la.customview"
         }
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"

@@ -61,6 +61,7 @@ void throwErrToJava(int error_code) {
 
 void callback(RTMPPacket *packet) {
     if (packet) {
+        // 设置时间戳
         packet->m_nTimeStamp = RTMP_GetTime() - start_time;
         packets.push(packet);
     }
@@ -150,6 +151,7 @@ Live_FUNC(void, native_1init) {
     videoStream = new VideoStream;
     videoStream->setVideoCallback(callback);
     audioStream = new AudioStream;
+    // 将函数地址作为参数传入, c语言语法
     audioStream->setAudioCallback(callback);
     packets.setReleaseCallback(releasePackets);
     jobject_error = env->NewGlobalRef(instance);

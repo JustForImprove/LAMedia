@@ -69,20 +69,27 @@ RTMPPacket *AudioStream::getAudioTag() {
 
 void AudioStream::encodeData(int8_t *data) {
     //encode a frame, and return encoded len
+    // facc库进行acc编码
+    // buffer存放pcm被编码后的acc数据，返回的是编码后的数据长度
     int byteLen = faacEncEncode(audioCodec, reinterpret_cast<int32_t *>(data),
                                 static_cast<unsigned int>(inputSamples),
                                 buffer,
                                 static_cast<unsigned int>(maxOutputBytes));
+    // 如果编码后的数据长度大于0
     if (byteLen > 0) {
+        // 前两个用于存储一些包信息
         int bodySize = 2 + byteLen;
+        //
         RTMPPacket *packet = new RTMPPacket;
         RTMPPacket_Alloc(packet, bodySize);
-        //stereo
+        //stereo   立体声 AF , 单声道 AE 具体如何配看博客;
         packet->m_body[0] = 0xAF;
+        // 如果是单声道就配成单声道
         if (mChannels == 1) {
+            //
             packet->m_body[0] = 0xAE;
         }
-
+        // 版本
         packet->m_body[1] = 0x01;
         memcpy(&packet->m_body[2], buffer, static_cast<size_t>(byteLen));
 
